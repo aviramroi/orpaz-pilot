@@ -1,0 +1,25 @@
+@use "../../config.scss" as *;
+
+@mixin highlight($animated: false) {
+  background-image: linear-gradient(to right, $color-brand 0%, $color-brand 100%);
+  background-position: 0 17.5%;
+  background-repeat: no-repeat;
+  background-size: 100% 35%;
+  text-decoration: none;
+  transition: background-size 0.3s;
+
+  @if $animated {
+    background-size: 0 35%;
+  }
+}
+
+@keyframes highlightAnimation {
+
+  0% {
+    background-size: 0% 35%;
+  }
+
+  100% {
+    background-size: 100% 35%;
+  }
+}

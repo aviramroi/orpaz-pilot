@@ -1,0 +1,24 @@
+// If you change some values here
+// please change here as well: uikit/src/definitions/Breakpoints.ts
+
+$media-direction:       min;
+
+$breakpoints: (
+  "default":            "",
+  //"xs":                 30em, // There should be no explicit xs breakpoint, as we are developing mobile first and this breakpoint should be covered by the default styling
+  "s":                  41em,
+  "m":                  64em,
+  "l":                  80em,
+  "xl":                 105em,
+);
+
+@mixin breakpoint($breakpoint,$direction: $media-direction) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (#{$direction}-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }
+  @else {
+    @error "Property #{map-get($breakpoints, $breakpoint)} does not exist on given breakpoints map";
+  }
+}

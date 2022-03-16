@@ -1,0 +1,62 @@
+@use "./breakpoint.scss" as *;
+
+$grid-xs-s-margin: 20px;
+$grid-xs-s-gap: 10px;
+$grid-xs-columns: 2;
+$grid-s-columns: 4;
+
+$grid-m-l-xl-column-width: 96px;
+$grid-m-l-xl-gap: 24px;
+$grid-m-columns: 8;
+$grid-l-columns: 10;
+$grid-xl-columns: 12;
+
+@function grid-width-m-l-xl($columns) {
+  @return $grid-m-l-xl-column-width * $columns + $grid-m-l-xl-gap * ($columns - 1);
+}
+
+@mixin grid($columns) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+}
+
+@mixin responsive-grid($breakpoint: "m", $colsSmall: 2, $colsLarge: 12) {
+  @include grid($colsSmall);
+
+  column-gap: $grid-xs-s-gap;
+  row-gap: $grid-xs-s-gap;
+
+  @include breakpoint($breakpoint) {
+    @include grid($colsLarge);
+
+    column-gap: $grid-m-l-xl-gap;
+    row-gap: $grid-m-l-xl-gap;
+  }
+}
+
+@mixin cols($span, $startCol: auto) {
+  grid-column: $startCol / span $span;
+}
+
+@mixin cols-breakpoint($breakpoint, $span, $startCol: auto) {
+  @include breakpoint($breakpoint) {
+    @include cols($span, $startCol);
+  }
+}
+
+@mixin generate-grid-classes($max-columns: 12) {
+  @each $breakpoint, $x in $breakpoints {
+    @for $i from 1 through $max-columns {
+      @if $breakpoint == "default" {
+        .col-#{$i} {
+          @include cols($i);
+        }
+      }
+      @else {
+        .col-#{$breakpoint}-#{$i} {
+          @include cols-breakpoint($breakpoint, $i);
+        }
+      }
+    }
+  }
+}

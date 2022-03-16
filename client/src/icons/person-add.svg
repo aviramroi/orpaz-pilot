@@ -1,0 +1,5 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path vector-effect="non-scaling-stroke" d="M2 36C2 31.5 8 31.5 11 28.5C12.5 27 8 27 8 19.5C8 14.5005 9.9995 12 14 12C18.0005 12 20 14.5005 20 19.5C20 27 15.5 27 17 28.5C20 31.5 26 31.5 26 36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path vector-effect="non-scaling-stroke" d="M44 22H28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path vector-effect="non-scaling-stroke" d="M36 14V30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>

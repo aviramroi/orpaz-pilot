@@ -1,0 +1,18 @@
+@use "sass:list";
+@use "../config" as *;
+
+// A little helper to make it easier to define transitions
+// $properties can be a list or a string
+@mixin transition($properties: all, $duration: $default-transition, $timing-function: ease-in-out) {
+  @if list.length($properties) == 0 {
+    transition: all $duration $timing-function;
+  }
+  @else if list.length($properties) == 1 {
+    transition: $properties $duration $timing-function;
+  }
+  @else {
+    transition-duration: $duration;
+    transition-property: list.join($properties);
+    transition-timing-function: $timing-function;
+  }
+}

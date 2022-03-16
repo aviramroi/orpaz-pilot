@@ -1,0 +1,11 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle vector-effect="non-scaling-stroke" cx="42" cy="9" r="2" transform="rotate(90 42 9)" stroke="currentColor" stroke-width="2"/>
+<path vector-effect="non-scaling-stroke" d="M42 4L42 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path vector-effect="non-scaling-stroke" d="M42 11L42 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle vector-effect="non-scaling-stroke" cx="30" cy="9" r="2" transform="rotate(90 30 9)" stroke="currentColor" stroke-width="2"/>
+<path vector-effect="non-scaling-stroke" d="M30 4L30 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path vector-effect="non-scaling-stroke" d="M30 11L30 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle vector-effect="non-scaling-stroke" cx="36" cy="15" r="2" transform="rotate(90 36 15)" stroke="currentColor" stroke-width="2"/>
+<path vector-effect="non-scaling-stroke" d="M36 4L36 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path vector-effect="non-scaling-stroke" d="M36 17L36 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

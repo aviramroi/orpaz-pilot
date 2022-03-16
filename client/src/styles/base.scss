@@ -1,0 +1,107 @@
+@use "./config.scss" as *;
+@use "./mixins/typography.scss" as *;
+@use "./mixins/breakpoint.scss" as *;
+@use "./reset.scss" as *;
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  // Allow other box models to affect their children
+  box-sizing: inherit;
+}
+
+html,
+body {
+  @include copy-base(true);
+
+  background: $color-mortar;
+  color: $color-dark;
+
+  // Do not change this to hidden!
+  // Setting this to hidden prevents using position: sticky anywhere in the page.
+  // I know it's useful to hide content that is misplaced, but for those cases we need to find a better solution :)
+  // Leaving this comment here now, to make it clear before it gets add again ;-)
+  overflow-x: visible;
+  scroll-behavior: smooth;
+
+  // Add a message in the bottom right to show the current breakpoint (only on dev mode)
+
+  &.debug {
+    &::before {
+      background: #f0f;
+      bottom: 1rem;
+      content: "Breakpoint: None / XS";
+      opacity: 0.5;
+      padding: 0.25rem;
+      pointer-events: none;
+      position: fixed;
+      right: 1rem;
+      z-index: 10000;
+
+      @include breakpoint("s") {
+        background: #0af;
+        content: "Breakpoint: S";
+      }
+
+      @include breakpoint("m") {
+        background: #0aa;
+        content: "Breakpoint: M";
+      }
+
+      @include breakpoint("l") {
+        background: #0a3;
+        content: "Breakpoint: L";
+      }
+
+      @include breakpoint("xl") {
+        background: #ee3;
+        content: "Breakpoint: XL";
+      }
+    }
+  }
+
+  &.hasBackdrop {
+    // Disable scrolling
+    overflow: hidden;
+  }
+}
+
+// overlay for the background
+
+.backdrop {
+  background: rgba($color-black, 0.6);
+  bottom: 0;
+  content: "";
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity $medium-transition-duration ease-out;
+  z-index: $z-index-backdrop;
+
+  &.enabled {
+    opacity: 1;
+  }
+}
+
+a {
+  color: $color-dark;
+  cursor: pointer;
+  transition: $default-transition;
+}
+
+strong {
+  font-weight: 700;
+}
+
+img,
+svg {
+  height: auto;
+  max-width: 100%;
+  width: auto;
+}

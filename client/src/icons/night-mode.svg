@@ -1,0 +1,12 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" clip-rule="evenodd" d="M24 38C31.732 38 38 31.732 38 24C38 16.268 31.732 10 24 10C16.268 10 10 16.268 10 24C10 31.732 16.268 38 24 38Z" stroke="currentColor" stroke-width="2"/>
+<path vector-effect="non-scaling-stroke" d="M31.7973 25.7973C31.2196 25.9299 30.618 26 30 26C25.5817 26 22 22.4183 22 18C22 17.382 22.0701 16.7804 22.2027 16.2026C18.6499 17.0182 16 20.1996 16 23.9999C16 28.4182 19.5817 31.9999 24 31.9999C27.8003 31.9999 30.9817 29.3501 31.7973 25.7973Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+<path vector-effect="non-scaling-stroke" d="M24 10V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path vector-effect="non-scaling-stroke" d="M24 42V38" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" clip-rule="evenodd" d="M10 24H4H10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" clip-rule="evenodd" d="M44 24H38H44Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" clip-rule="evenodd" d="M33.8994 14.1005L38.1421 9.85791L33.8994 14.1005Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" clip-rule="evenodd" d="M9.85791 38.1421L14.1005 33.8994L9.85791 38.1421Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" clip-rule="evenodd" d="M33.8994 33.8994L38.1421 38.1421L33.8994 33.8994Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" clip-rule="evenodd" d="M9.85791 9.85791L14.1005 14.1005L9.85791 9.85791Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

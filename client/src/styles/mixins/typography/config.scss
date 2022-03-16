@@ -1,0 +1,88 @@
+@use "../breakpoint.scss" as *;
+@use "sass:map" as map;
+
+$font-family: LosAndesSpockPro, Arial, Helvetica, sans-serif; /* stylelint-disable-line */
+$stylistic-set: "ss01" on, "ss02" on, "ss03" on;
+
+$font-size-base: 16px;
+$line-height-base: 150%;
+
+$mobile-font-breakpoint: "s";
+$tablet-font-breakpoint: "m";
+$desktop-font-breakpoint: "xl";
+
+// Responsive font-sizes are mobile first, i.e. default are mobile sizes and then bigger font-sizes depend on the breakpoints
+$font-sizes: (
+  default: (
+    headline-ultra: 40px,
+    headline-mega: 34px,
+    headline-super: 30px,
+    headline: 22px,
+    headline-sub: 28px,
+    // headline-sub is actually bigger and not semantically smaller than headline on mobile devices (it's in line with the design system, but not imho perfect...)
+    copy-super: 20px,
+    copy-base: $font-size-base,
+    smallprint: 10px,
+  ),
+  $mobile-font-breakpoint: (
+    headline-ultra: 40px,
+    headline-mega: 56px,
+    headline-super: 46px,
+    headline: 22px,
+    headline-sub: 28px,
+    copy-super: 24px,
+  ),
+  $tablet-font-breakpoint: (
+    headline-ultra: 90px,
+    headline-mega: 56px,
+    headline-super: 46px,
+    headline-sub: 28px,
+    headline: 26px,
+    copy-super: 24px,
+  ),
+  $desktop-font-breakpoint: (
+    headline-ultra: 110px,
+    headline-mega: 80px,
+    headline-super: 50px,
+    headline-sub: 32px,
+    headline: 36px,
+    copy-super: 24px,
+  ),
+);
+
+// Line heights are the same across all breakpoints
+$line-heights: (
+  headline-ultra: 120%,
+  headline-mega: 120%,
+  headline-super: 120%,
+  headline: 180%,
+  headline-sub: 160%,
+  copy-super: 140%,
+  copy-base: $line-height-base,
+  smallprint: 150%,
+);
+
+@mixin typography-configuration($class, $breakpoint: "default") {
+  @if not map.has-key($font-sizes, $breakpoint, $class) {
+    @error "Invalid typography class #{$class} for breakpoint #{$breakpoint}";
+  }
+
+  font-size: map.get($font-sizes, $breakpoint, $class);
+  line-height: map.get($line-heights, $class);
+}
+
+@mixin responsive-typography-configuration($class) {
+  @include typography-configuration($class);
+
+  @include breakpoint($mobile-font-breakpoint) {
+    @include typography-configuration($class, $mobile-font-breakpoint);
+  }
+
+  @include breakpoint($tablet-font-breakpoint) {
+    @include typography-configuration($class, $tablet-font-breakpoint);
+  }
+
+  @include breakpoint($desktop-font-breakpoint) {
+    @include typography-configuration($class, $desktop-font-breakpoint);
+  }
+}

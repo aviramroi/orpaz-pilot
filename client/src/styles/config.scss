@@ -1,0 +1,75 @@
+@use "sass:math";
+
+/* Keep this in-sync with "frontend-marketplace/src/definitions/Theme.ts" */
+// Colors
+$color-brand: #93ff90;
+$color-black: #000;
+$color-dark: #2e2b26;
+$color-white: #fff;
+$color-mortar: #f7f5ed;
+$color-warning: #f3bd32;
+$color-danger: #e2676e;
+
+// Radius
+$default-radius: 10px;
+$rounded-radius: 35px;
+
+// Box Shadow
+$default-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); // @TODO needs to be defined by the designers
+
+// Borders
+$default-border-width: 2px;
+$default-border-color: $color-dark;
+$light-border-color: rgba($color-dark, 0.2);
+
+// Spacing
+$spacing-base: 10px;
+$spacing-5: math.div($spacing-base, 2);
+$spacing-10: $spacing-base;
+$spacing-15: $spacing-base * 1.5;
+$spacing-20: $spacing-base * 2;
+$spacing-30: $spacing-base * 3;
+$spacing-40: $spacing-base * 4;
+$spacing-50: $spacing-base * 5;
+$spacing-60: $spacing-base * 6;
+$spacing-70: $spacing-base * 7;
+$spacing-80: $spacing-base * 8;
+$spacing-90: $spacing-base * 9;
+$spacing-100: $spacing-base * 10;
+$spacing-110: $spacing-base * 11;
+$spacing-120: $spacing-base * 12;
+$spacing-130: $spacing-base * 13;
+$spacing-150: $spacing-base * 15;
+
+// Animation & Transition
+$default-transition-duration: 0.1s;
+
+// @deprecated. use the `transition` mixin instead, which is more flexible and allows to define custom properties
+$default-transition: all $default-transition-duration ease-in-out;
+
+$medium-transition-duration: 0.3s;
+$slow-transition-duration: 0.5s;
+$very-slow-transition-duration: 1.5s;
+
+// z-index settings
+$z-index-header: 20;
+$z-index-multinav: 30;
+$z-index-sticky-element: 50;
+$z-index-backdrop: 80;
+$z-index-modal: 90;
+$z-index-megaMenu: 90;
+$z-index-lightbox: 90;
+$z-index-toast-center: 100;
+
+// $z-index-notificationCenter: 40; // currently set as tailwind className
+
+// Buttons
+$button-height: 48px;
+
+// Container
+$container-width: 1416px;
+$container-padding-default: 20px; // padding to the left and right
+
+// Subnav
+$subnavContainer-height: 68px; // The whole height of the subnav, including padding
+$subnavContainer-height-desktop: 88px; // The whole height of the subnav, including padding

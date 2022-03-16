@@ -1,0 +1,73 @@
+@use "../../styles/config.scss" as *;
+@use "../../styles/mixins/typography.scss" as *;
+
+.highlight {
+  @include highlight;
+}
+
+.headlineUltra {
+  @include responsive-headline-ultra();
+}
+
+.headlineMega {
+  @include responsive-headline-mega();
+
+  .highlight {
+    @include highlight($animated: true);
+  }
+
+  &.isInViewport .highlight {
+    animation: highlightAnimation $very-slow-transition-duration forwards;
+    animation-delay: 500ms; // this value is currenty in sync with the hero animation duration (frontend-marketplace/src/components/contentful/ContentfulHero.tsx)
+  }
+}
+
+.headlineSuper {
+  @include responsive-headline-super();
+}
+
+.headline {
+  @include responsive-headline();
+}
+
+.headlineBold {
+  @include responsive-headline(true);
+}
+
+.headlineSub {
+  @include responsive-headline-sub();
+}
+
+.headlineSubBold {
+  @include responsive-headline-sub(true);
+}
+
+.copySuper {
+  @include copy-super();
+}
+
+.copySuperBold {
+  @include copy-super-bold();
+}
+
+// The following class is actually not necessary, as it is the default typography style which
+// is defined on the body. I will keep it here as a reference though.
+//.copy-base {
+//  @include copy-base();
+//}
+
+.smallprint {
+  @include smallprint();
+}
+
+.copy {
+
+  a {
+    @include text-link;
+  }
+
+  p {
+    // TODO: Define correct margin
+    margin-bottom: $spacing-20;
+  }
+}

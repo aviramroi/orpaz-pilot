@@ -1,0 +1,43 @@
+@use "../../styles/config.scss" as *;
+@use "../../styles/mixins/input.scss" as *;
+@use "../../styles/mixins/typography.scss" as typography;
+
+.textfieldActions {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  line-height: 100%;
+  margin-right: auto;
+  margin-right: $input-padding-x;
+  transition: $default-transition;
+
+  > * {
+    flex-shrink: 0;
+    margin-right: 10px;
+
+    &:first-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.textfieldInput {
+  position: relative;
+
+  &::placeholder {
+    opacity: 0;
+    transition: $default-transition;
+  }
+
+  &:not(:placeholder-shown) + label,
+  &:focus + label {
+    @include typography.smallprint;
+
+    transform: translateY(-13px);
+  }
+
+  &:not(:placeholder-shown) ~ .textfieldActions,
+  &:focus ~ .textfieldActions {
+    transform: translateY(11px);
+  }
+}

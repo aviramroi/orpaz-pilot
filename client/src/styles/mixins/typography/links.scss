@@ -1,0 +1,18 @@
+@use "../../config.scss" as *;
+
+// Set $underline-link to false, if the link should not have an underline by default
+@mixin text-link($underline-link: true) {
+  background-image: linear-gradient(to right, $color-brand 0%, $color-brand 100%);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% (if($underline-link == true, $default-border-width, 0));
+  box-sizing: content-box;
+  color: $color-dark;
+  text-decoration: none;
+  transition: $default-transition;
+
+  &:hover {
+    background-image: linear-gradient(to right, $color-brand 0%, $color-brand 100%);
+    background-size: 100% 50%;
+  }
+}

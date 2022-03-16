@@ -1,0 +1,84 @@
+@use "../config.scss" as *;
+@use "../../styles/mixins/typography.scss" as typography;
+
+$input-height: 68px;
+$input-padding-x: 20px;
+
+// The actual padding from the top to the input text is 30px. But the text in inputs are always centered, so we need to
+// use a bit less, to get it centered between label and bottom without using padding-bottom (which we should not do to
+// prevent layout glitches)
+// So this is a rough approximation to get it centered between label and bottom
+$input-padding-top: 22px;
+
+@mixin make-input($fixedHeight: true) {
+  align-items: center;
+  background: $color-white;
+  border: $default-border-width solid $color-dark;
+  border-radius: $default-radius;
+  box-sizing: border-box;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+
+  @if $fixedHeight {
+    height: $input-height;
+  }
+
+  label {
+    color: $color-dark;
+    right: $input-padding-x;
+    pointer-events: none;
+    position: absolute;
+    transition: $default-transition;
+
+    @if $fixedHeight == false {
+      top: 20px;
+    }
+  }
+
+  input,
+  textarea,
+  select {
+    @include typography.copy-base;
+
+    background: transparent;
+    border: none;
+    font-family: inherit; // Inputs do not use the body font by default
+    font-size: 1rem;
+    outline: none;
+    padding: $input-padding-top $input-padding-x 0 $input-padding-x;
+    width: 100%;
+
+    @if $fixedHeight {
+      height: $input-height;
+    }
+
+    &:focus {
+      outline: none;
+
+      &::placeholder {
+        opacity: 1;
+      }
+    }
+  }
+
+  // Disable styllint here because they want to move this styling above the input, textarea, select block.
+  // But if we do this we can not override the styles
+  // stylelint-disable-next-line
+  textarea {
+    height: auto;
+    min-height: $input-height;
+  }
+
+  &.error {
+    border-color: $color-danger;
+    color: $color-danger;
+
+    label,
+    input,
+    textarea,
+    select {
+      color: $color-danger;
+    }
+  }
+}

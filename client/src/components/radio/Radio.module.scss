@@ -1,0 +1,78 @@
+@use "../../styles/config.scss" as *;
+
+.radioInput {
+  display: none;
+}
+
+.label {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  justify-content: center;
+  line-height: 26px;
+  margin-right: 10px;
+  padding-left: 34px;
+  position: relative;
+  vertical-align: baseline;
+
+  .hasError & {
+    color: $color-danger;
+  }
+}
+
+// The radio itself
+
+.label::before {
+  border: $default-border-width solid $color-dark;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: $default-transition;
+  width: 24px;
+}
+
+:checked + .label::before {
+  background-color: $color-dark;
+}
+
+// The checked circle in the radio element
+
+.label::after {
+  background-color: transparent;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 10px;
+  left: 7px;
+  position: absolute;
+  top: 7px;
+  transition: $default-transition;
+  width: 10px;
+}
+
+.label:hover::after {
+  background-color: $color-dark;
+}
+
+:checked + .label::after {
+  background-color: $color-brand;
+}
+
+.hasError {
+
+  .label::before {
+    border-color: $color-danger;
+  }
+
+  .label::after {
+    border-color: $color-danger;
+  }
+
+  .radioInput:checked + label::before {
+    background-color: $color-danger;
+  }
+}

@@ -1,0 +1,7 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path vector-effect="non-scaling-stroke" d="M22 16L18.4223 14.2111C18.1446 14.0723 17.8384 14 17.5279 14H14.8284C14.298 14 13.7893 14.2107 13.4142 14.5858L10.5858 17.4142C10.2107 17.7893 10 18.298 10 18.8284L10 30.9296C10 31.5983 10.3342 32.2228 10.8906 32.5937L20.7575 39.1716C21.4944 39.663 22.4668 39.611 23.1472 39.044L34 30" stroke="currentColor" stroke-width="2"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" clip-rule="evenodd" d="M27.8537 24.4142C27.2503 23.6062 26.1397 23.3739 25.263 23.8721L19.3249 27.247C18.5423 27.6918 17.559 27.559 16.9224 26.9224L15.5486 25.5486C14.717 24.717 14.779 23.3509 15.6825 22.598L25.4437 14.4636C25.8032 14.164 26.2562 14 26.7241 14H29.5279C29.8384 14 30.1446 14.0723 30.4223 14.2111L36.8944 17.4472C37.572 17.786 38 18.4785 38 19.2361L38 31.9796C38 33.9037 35.5489 34.718 34.3976 33.1764L27.8537 24.4142Z" stroke="currentColor" stroke-width="2"/>
+<path vector-effect="non-scaling-stroke" d="M2 34V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path vector-effect="non-scaling-stroke" d="M2 34V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path vector-effect="non-scaling-stroke" d="M46 34V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>

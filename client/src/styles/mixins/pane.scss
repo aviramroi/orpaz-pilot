@@ -1,0 +1,77 @@
+@use "../config.scss" as *;
+@use "sass:map";
+
+// TODO Take a closer look into the designs and check if there are more sizes
+$pane-sizes: (
+  "small": (
+    "minHeight": 49px,
+    "padding": $spacing-10
+  ),
+  "medium": (
+    "minHeight": 88px,
+    "padding": $spacing-20
+  ),
+  "large": (
+    "minHeight": 128px,
+    "padding": $spacing-20,
+    "padding-horizontal": $spacing-30
+  ),
+  "x-large": (
+    "minHeight": 236px,
+    "padding": $spacing-30
+  ),
+);
+
+/**
+ * A pane is one of the main design elements in our design system and is the basis for any kind surface that groups some content.
+ */
+@mixin pane($border: false, $background: null, $direction: null, $size: "medium") {
+  border-radius: $default-radius;
+  display: flex;
+
+  @if map-has-key($pane-sizes, $size) {
+    min-height: map.get($pane-sizes, $size, "minHeight");
+
+    @if (map-has-key($pane-sizes, $size, "padding-horizontal")) {
+      padding: map.get($pane-sizes, $size, "padding") map.get($pane-sizes, $size, "padding-horizontal");
+    }
+    @else {
+      padding: map.get($pane-sizes, $size, "padding");
+    }
+  }
+  @else {
+    @error "Property '#{$size}' does not exist on given $pane-sizes";
+  }
+
+  @if ($border) {
+    @include pane-border;
+  }
+
+  @if ($background) {
+    background: $background;
+  }
+
+  @if ($direction == "column") {
+    flex-direction: column;
+    justify-content: center;
+  }
+  @else if ($direction == "row") {
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+// A pane with horizontal content direction (flex-direction: row)
+@mixin pane-horizontal($border: false, $background: null, $size: "medium") {
+  @include pane($border, $background, $direction: "row", $size: $size);
+}
+
+// A pane with vertical content direction (flex-direction: column)
+@mixin pane-vertical($border: false, $background: null, $size: "medium") {
+  @include pane($border, $background, $direction: "column", $size: $size);
+}
+
+@mixin pane-border($color: $default-border-color) {
+  // The border is inset because it should not have any influence on the height of a pane if there is a border
+  box-shadow: inset 0 0 0 $default-border-width $color;
+}

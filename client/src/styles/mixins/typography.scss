@@ -1,0 +1,5 @@
+@forward "typography/config" show $font-size-base, $line-height-base;
+@forward "typography/copy";
+@forward "typography/headlines";
+@forward "typography/links";
+@forward "typography/highlight";

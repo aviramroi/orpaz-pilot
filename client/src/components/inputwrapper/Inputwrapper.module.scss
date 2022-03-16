@@ -1,0 +1,30 @@
+@use "../../styles/config.scss" as *;
+@use "../../styles/mixins/input.scss" as *;
+
+$maxWidth: 457px;
+
+.inputWrapper {
+  @include make-input();
+
+  // The input is overflowing out of the input wrapper and not respecting the rounded border in all cases
+  // (for example in Chrome, when the input was autofilled in the Login form)
+  overflow: hidden;
+
+  svg {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.textareaWrapper {
+  @include make-input(false);
+
+  svg {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.withMaxWidth {
+  max-width: $maxWidth;
+}

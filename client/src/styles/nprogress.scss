@@ -1,0 +1,32 @@
+@use "config" as *;
+
+$spinner-width: 5px;
+
+#nprogress {
+
+  .bar {
+    background: $color-brand;
+    height: 12px;
+  }
+
+  .peg {
+    box-shadow: none;
+  }
+
+  .spinner {
+    right: 30px;
+    top: 30px;
+  }
+
+  .spinner-icon {
+    border-bottom-color: $color-dark;
+    border-left-color: $color-brand;
+    border-radius: 50%;
+    border-right-color: $color-dark;
+    border-top-color: $color-brand;
+    border-width: 10px;
+    height: 50px;
+    position: relative;
+    width: 50px;
+  }
+}

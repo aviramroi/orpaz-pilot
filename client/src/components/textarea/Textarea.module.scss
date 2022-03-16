@@ -1,0 +1,40 @@
+@use "../../styles/config.scss" as *;
+@use "../../styles/mixins/input.scss" as *;
+@use "../../styles/mixins/typography.scss" as typography;
+
+.textarea-actions {
+  align-content: center;
+  align-items: center;
+  bottom: $spacing-10;
+  display: flex;
+  line-height: 100%;
+  position: absolute;
+  right: $input-padding-x;
+
+  > * {
+    flex-shrink: 0;
+    margin-left: 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.textarea-input {
+  margin: 0 $spacing-10 $spacing-10 0; // this is for making the resize symbol visible
+  position: relative;
+  resize: vertical;
+
+  &::placeholder {
+    opacity: 0;
+    transition: $default-transition;
+  }
+
+  &:not(:placeholder-shown) + label,
+  &:focus + label {
+    @include typography.smallprint;
+
+    transform: translateY(-11px);
+  }
+}

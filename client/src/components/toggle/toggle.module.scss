@@ -1,0 +1,97 @@
+@use "../../styles/config.scss" as *;
+
+.toggleContainer {
+  position: relative;
+  width: min-content;
+  cursor: pointer;
+  &.disabled {
+    cursor: default;
+  }
+}
+
+.toggleBackground {
+  display: block;
+  width: 60px;
+  height: 30px;
+  border-radius: 100px;
+  background: $color-dark;
+
+  &.disabled {
+    background: $color-white;
+  }
+
+  &.pressed {
+    &.singleLabel {
+      background: $color-brand;
+    }
+  }
+}
+
+.toggleCircle {
+  display: block;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: 2px;
+  left: 2px;
+  border-radius: 100px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: $color-mortar;
+  margin-left: 0;
+  cursor: pointer;
+  &.pressed {
+    margin-left: 30px;
+  }
+  &.disabled {
+    cursor: default;
+  }
+
+  svg {
+    color: $color-dark;
+  }
+}
+
+.iconCss {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.mainContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  label {
+    color: $color-dark;
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  .l {
+    margin: 0;
+    margin-left: 8px;
+  }
+  .r {
+    margin: 0;
+    margin-right: 8px;
+  }
+  .S {
+    font-size: 14px;
+    line-height: 130%;
+  }
+  .M {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

@@ -1,0 +1,20 @@
+@use "../config.scss" as *;
+@use "./breakpoint.scss" as *;
+
+$header-padding-default: 20px;
+$header-padding-m: 50px $container-padding-default; // There must not be more padding to the sides than in the content container
+$header-padding-xl: 50px 50px;
+
+@mixin header-padding {
+  padding: $spacing-20;
+  position: relative;
+  z-index: $z-index-header;
+
+  @include breakpoint("m") {
+    padding: $header-padding-m;
+  }
+
+  @include breakpoint("xl") {
+    padding: $header-padding-xl;
+  }
+}

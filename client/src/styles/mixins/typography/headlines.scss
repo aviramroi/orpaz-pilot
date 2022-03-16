@@ -1,0 +1,63 @@
+@use "../../mixins/breakpoint.scss" as *;
+@use "config.scss" as *;
+@use "sass:map" as map;
+
+@mixin responsive-headline-ultra {
+  @include _responsive-headline(headline-ultra);
+}
+
+@mixin responsive-headline-mega {
+  @include _responsive-headline(headline-mega);
+}
+
+@mixin responsive-headline-super {
+  @include _responsive-headline(headline-super);
+}
+
+@mixin responsive-headline($bold: false) {
+  @include _responsive-headline(headline);
+
+  letter-spacing: 0.03em;
+
+  @if $bold {
+    font-weight: bold;
+  }
+  @else {
+    font-weight: 300;
+  }
+
+  // Override the font-weight if this mixins is used directly on a strong tag
+  @at-root {
+    strong#{&} {
+      font-weight: bold;
+    }
+  }
+}
+
+@mixin responsive-headline-sub($bold: false) {
+  @include _responsive-headline(headline-sub);
+
+  @if $bold {
+    font-weight: bold;
+  }
+  @else {
+    font-weight: 300;
+  }
+
+  font-feature-settings: $stylistic-set;
+
+  // Override the font-weight if this mixins is used directly on a strong tag
+  @at-root {
+    strong#{&} {
+      font-weight: bold;
+    }
+  }
+}
+
+// A mixin that creates automatic breakpoints for the headlines that change with different breakpoints
+@mixin _responsive-headline($class) {
+  @include responsive-typography-configuration($class);
+
+  font-feature-settings: $stylistic-set;
+  font-weight: bold;
+}

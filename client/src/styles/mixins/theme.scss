@@ -1,0 +1,46 @@
+@use "../config" as *;
+@use "sass:map" as map;
+
+$background-themes: (
+  brand: (
+    text-color: $color-dark,
+    background: $color-brand,
+  ),
+  dark: (
+    text-color: $color-white,
+    background: $color-dark,
+  ),
+  "white": (
+    text-color: $color-dark,
+    background: $color-white,
+  ),
+  mortar: (
+    text-color: $color-dark,
+    background: $color-mortar
+  ),
+  danger: (
+    text-color: $color-white,
+    background: $color-danger
+  ),
+);
+
+// Usually the css classes are named exactly the same as the theme. For this reason there is currently
+// no possibility to set a custom className.
+// If you set $className to false you can prevent creating the wrapping className
+
+@mixin background-theme($theme-name, $className: true) {
+  @if not map.has-key($background-themes, $theme-name) {
+    @error "Invalid name #{$theme-name} for themes #{$background-themes}";
+  }
+
+  @if $className {
+    .#{$theme-name} {
+      background: map.get($background-themes, $theme-name, background);
+      color: map.get($background-themes, $theme-name, text-color);
+    }
+  }
+  @else {
+    background: map.get($background-themes, $theme-name, background);
+    color: map.get($background-themes, $theme-name, text-color);
+  }
+}

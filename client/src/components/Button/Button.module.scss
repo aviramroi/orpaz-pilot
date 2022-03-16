@@ -1,0 +1,174 @@
+@use "../../styles/config.scss" as *;
+@use "../../styles/mixins/typography.scss" as typography;
+@use "../../styles/mixins/theme" as *;
+@use "sass:math";
+@use "sass:color";
+
+// dark color on mortar background with 20 % transparency
+// Used for disabled buttons
+$dark-disabled: color.mix($color-dark, $color-mortar, $weight: 20%);
+
+@mixin outline-button($tint) {
+  background: transparent;
+  border: $default-border-width solid $tint;
+  color: $tint;
+
+  &:hover {
+    background: $color-brand;
+    border-color: $color-brand;
+    color: $color-dark;
+  }
+
+  &:disabled {
+    // Outline buttons are not sticky, so we can use opacity here to fade it into the background
+    background: transparent;
+    border: $default-border-width solid $tint;
+    color: $tint;
+    opacity: 0.2;
+  }
+}
+
+// This is a common style for disabled buttons
+
+@mixin isDisabled() {
+  // Not using opacity here, as this looks ugly when the button is sticky and hovers other elements
+  background: $dark-disabled;
+  color: $color-mortar;
+  cursor: not-allowed;
+}
+
+$content-height: math.round(typography.$font-size-base * math.div(typography.$line-height-base, 100%)); // 29px
+
+.button {
+  align-items: center;
+  background: $color-dark;
+  border: $default-border-width solid transparent;
+  border-radius: $default-radius;
+  box-sizing: border-box;
+  color: $color-mortar;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: row;
+  font-weight: bold;
+  justify-content: center;
+  line-height: 180%;
+  min-height: $button-height;
+  padding: 0 $spacing-20;
+  text-decoration: none;
+  transition: background ease 0.3s, border ease 0.3s;
+  vertical-align: middle;
+
+  svg {
+    height: auto;
+    max-height: $content-height;
+    max-width: 24px;
+
+    &:first-child {
+      margin-right: $spacing-10;
+    }
+
+    &:last-child {
+      margin-left: $spacing-10;
+    }
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:disabled {
+    @include isDisabled();
+
+    pointer-events: none;
+  }
+
+  &.iconOnly {
+    min-width: $button-height;
+    // Buttons that have only an icon should be rendered as a "square" button
+    padding-left: 0;
+    padding-right: 0;
+
+    svg {
+      margin: 0;
+    }
+  }
+}
+
+.linkUnderlined,
+.linkBold {
+  background: transparent;
+  color: inherit;
+}
+
+.linkUnderlined {
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+.dark {
+  background: $color-dark;
+  color: $color-mortar;
+
+  &:hover {
+    background: $color-brand;
+    color: $color-dark;
+  }
+}
+
+.darkInverted {
+  background: $color-dark;
+  color: $color-mortar;
+
+  &:hover {
+    background: $color-mortar;
+    color: $color-dark;
+  }
+}
+
+.brand {
+  background: $color-brand;
+  color: $color-dark;
+
+  &:hover {
+    background: $color-dark;
+    color: $color-white;
+  }
+}
+
+@include background-theme("danger");
+
+.danger {
+
+  &:hover {
+    background: $color-dark;
+    color: $color-white;
+  }
+}
+
+.fakeDisabled {
+  @include isDisabled();
+}
+
+.outline {
+  @include outline-button($color-dark);
+}
+
+.outlineWhite {
+  @include outline-button($color-white);
+}
+
+.block {
+  width: 100%;
+}
+
+.brandWithMortarOutline {
+  @extend .brand;
+
+  border: $default-border-width solid $color-mortar;
+}
+
+.darkWithMortarOutline {
+  @extend .dark;
+
+  border: $default-border-width solid $color-mortar;
+}

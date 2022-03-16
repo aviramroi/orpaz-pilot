@@ -1,0 +1,8 @@
+@use "./font.scss" as *;
+@use "./base.scss" as *;
+@use "./nprogress.scss" as *;
+@use "./carousel.scss" as *;
+@use "./mixins/grid.scss" as *;
+
+// generates global grid classes like col-3 and col-m-3
+@include generate-grid-classes;

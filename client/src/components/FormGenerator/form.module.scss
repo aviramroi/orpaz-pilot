@@ -1,0 +1,65 @@
+@use "../../styles/config.scss" as *;
+
+.container {
+  width: 800px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.formFieldsContainer {
+  padding: 20px;
+  border: 2px solid;
+  border-radius: 20px;
+  position: relative;
+  &:hover {
+    .formDeleteButton {
+      visibility: visible;
+    }
+  }
+}
+
+.oneColumn {
+  display: grid;
+  gap: 20px;
+}
+
+.twoColumns {
+  display: grid;
+  gap: 20px 4%;
+  grid-template-columns: 48% 48%;
+}
+
+.fieldsArrayContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formDeleteButton {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  height: 30px;
+  width: 30px;
+  visibility: hidden;
+  border-radius: 100px;
+  cursor: pointer;
+  background: $color-dark;
+  color: $color-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    height: 20px;
+    width: 20px;
+  }
+  &:hover {
+    background: $color-danger;
+  }
+}
+
+.formFooter {
+  display: flex;
+  justify-content: flex-end;
+}

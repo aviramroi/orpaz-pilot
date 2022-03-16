@@ -1,0 +1,5 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path vector-effect="non-scaling-stroke" d="M36 32H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" clip-rule="evenodd" d="M12 32C16.4183 32 20 28.4183 20 24C20 19.5817 16.4183 16 12 16C7.58172 16 4 19.5817 4 24C4 28.4183 7.58172 32 12 32Z" stroke="currentColor" stroke-width="2"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" clip-rule="evenodd" d="M36 32C40.4183 32 44 28.4183 44 24C44 19.5817 40.4183 16 36 16C31.5817 16 28 19.5817 28 24C28 28.4183 31.5817 32 36 32Z" stroke="currentColor" stroke-width="2"/>
+</svg>

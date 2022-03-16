@@ -1,0 +1,21 @@
+@use "../../styles/config.scss" as *;
+@use "../../styles/mixins/input.scss" as *;
+@use "../../styles/mixins/typography.scss" as typography;
+
+.selectInput {
+  margin-left: -4px;
+
+  // TODO just a quick hack to get a bit of spacing for the dropdown arrow, but now you cannot click at the right edge
+  // and it looks like this doesn't work in a container that can grow to the right... I skip this for now again, we need to check this later
+  margin-right: $input-padding-x;
+  position: relative;
+  text-indent: 0;
+  width: calc(100% + 4px);
+}
+
+.selectedLabel {
+  @include typography.smallprint;
+
+  pointer-events: none;
+  transform: translateY(-13px);
+}

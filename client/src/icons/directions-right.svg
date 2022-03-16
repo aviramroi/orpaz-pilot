@@ -1,0 +1,5 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path vector-effect="non-scaling-stroke" d="M30 22H24C24 22 20.0001 22 20.0001 26.4C20.0001 28 20.0001 30 20.0001 30" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path vector-effect="non-scaling-stroke" d="M26 26L30 22L26 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<rect vector-effect="non-scaling-stroke" width="28.2844" height="28.2844" transform="matrix(-0.707107 0.707107 0.707107 0.707107 24 4)" stroke="currentColor" stroke-width="2"/>
+</svg>
